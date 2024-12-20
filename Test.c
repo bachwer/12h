@@ -58,8 +58,14 @@ int main(void) {
                 goto menu2;
                 break;
             case 2:
-                printf("Nhap vi tri can them: ");
-                scanf("%d", &pos);
+                do{
+                    printf("Nhap vi tri can them: ");
+                    scanf("%d", &pos);
+                    fflush(stdin);
+                    if(pos > dishnum  || pos < 0){
+                        printf("moi nhap lai: \n");
+                    }
+                }while(pos > dishnum  || pos < 0);
                 pos--;
                 dishAdd(dish, pos, dishnum);
                 dishnum++;
@@ -67,16 +73,28 @@ int main(void) {
                 goto menu2;
                 break;
             case 3:
-                printf("Nhap vi tri can Sua: ");
-                scanf("%d", &pos);
+                do{
+                    printf("Nhap vi tri can Sua: ");
+                    scanf("%d", &pos);
+                    fflush(stdin);
+                    if(pos > dishnum  || pos < 0){
+                        printf("moi nhap lai: \n");
+                    }
+                }while(pos > dishnum  || pos < 0);
                 pos--;
                 dishChange(dish, pos);
                 printf("\t---Sucssec----\n");
                 goto menu2;
                 break;
             case 4:
-                printf("Nhap vi tri can Xoa: ");
-                scanf("%d", &pos);
+                do{
+                    printf("Nhap vi tri can Xoa: ");
+                    scanf("%d", &pos);
+                    fflush(stdin);
+                    if(pos > dishnum  || pos < 0){
+                        printf("moi nhap lai: \n");
+                    }
+                }while(pos > dishnum  || pos < 0);
                 pos--;
                 dishDelete(dish, pos, dishnum);
                 printf("\t---Sucssec----\n");
